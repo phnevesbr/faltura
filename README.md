@@ -102,3 +102,7 @@ Faltura é uma plataforma web moderna, gamificada e colaborativa para o gerencia
 *   **Segurança e Consistência com TypeScript:** O uso do TypeScript em todo o projeto garante tipagem forte, reduzindo erros em tempo de desenvolvimento e melhorando a manutenibilidade.
 *   **Experiência de Desenvolvimento Otimizada:** Vite proporciona um ambiente de desenvolvimento ágil com Hot Module Replacement (HMR) e uma build otimizada para produção.
 *   **Design Responsivo Avançado:** O Tailwind CSS permite um controle granular sobre o estilo, garantindo que a interface se adapte perfeitamente a qualquer tamanho de tela, com otimizações mobile-first.
+*   **Row Level Security (RLS):** Proteção por nível de linha de dados no PostgreSQL, garantindo que cada usuário só acesse seus próprios dados
+*   **Rate Limiting Inteligente:** Proteção contra spam e ataques com limites configuráveis por ação (login, signup, etc.)
+*   **Sistema de Banimento:** Moderação de usuários com logs de auditoria completos
+*   **Autenticação JWT:** Tokens seguros com refresh automático via Supabase Auth
