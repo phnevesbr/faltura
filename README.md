@@ -16,7 +16,7 @@ Faltula é uma plataforma web moderna, intuitiva e responsiva desenvolvida para 
 *   **Controle de Faltas Automatizado:** Registre suas faltas por data, e o sistema automaticamente calculará e atribuirá essas faltas às matérias que você teria naquele dia.
 *   **Alertas de Risco:** Receba notificações claras e visuais quando suas faltas se aproximarem (75%, 90%) ou atingirem (100%) o limite permitido, ajudando a evitar reprovações por frequência.
 *   **Dashboard Inteligente:** Tenha uma visão geral rápida do número de matérias, matérias em risco e informações do seu curso.
-*   **Persistência de Dados Local:** Todos os seus dados (usuário, matérias, grade e histórico de faltas) são salvos de forma segura diretamente no seu navegador, garantindo acesso rápido e offline.
+*   **Persistência de Dados Local:** Todos os seus dados (usuário, matérias, grade e histórico de faltas) são salvos de forma segura diretamente no seu navegador, garantindo acesso rápido e offline ou online pelo supabase.
 *   **Interface Responsiva:** Design moderno e totalmente adaptado para proporcionar uma excelente experiência em desktops, tablets e smartphones.
 *   **Gamificação:** Níveis, XP, badges, rankings
 *   **Conquistas:** Achievements com diferentes raridades
