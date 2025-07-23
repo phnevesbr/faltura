@@ -1,6 +1,6 @@
 # Faltura - Controle De Faltas 🚀
 
-![Faltura Screenshot](https://i.postimg.cc/DwcYRDtj/wmremove-transformed.png) <!-- TIRE UM PRINT BONITO OU FAÇA UM GIF! -->
+![Faltura Screenshot](https://i.ibb.co/pvnkL7FM/1-left.png) <!-- TIRE UM PRINT BONITO OU FAÇA UM GIF! -->
 
 **Live Demo:** [Clique aqui](https://faltura.vercel.app/) 
 
@@ -58,5 +58,3 @@ Faltula é uma plataforma web moderna, intuitiva e responsiva desenvolvida para 
 *   **Segurança e Consistência com TypeScript:** O uso do TypeScript em todo o projeto garante tipagem forte, reduzindo erros em tempo de desenvolvimento e melhorando a manutenibilidade.
 *   **Experiência de Desenvolvimento Otimizada:** Vite proporciona um ambiente de desenvolvimento ágil com Hot Module Replacement (HMR) e uma build otimizada para produção.
 *   **Design Responsivo Avançado:** O Tailwind CSS permite um controle granular sobre o estilo, garantindo que a interface se adapte perfeitamente a qualquer tamanho de tela, com otimizações mobile-first.
-
-![Mobile Screenshot](https://i.ibb.co/pvnkL7FM/1-left.png) <!-- TIRE UM PRINT BONITO OU FAÇA UM GIF! -->
