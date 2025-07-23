@@ -6,42 +6,69 @@
 
 ## 📝 Sobre o Projeto
 
-Faltula é uma plataforma web moderna, intuitiva e responsiva desenvolvida para ajudar alunos a organizarem suas aulas e controlarem suas faltas de forma automática, visual e eficiente. Simplifique sua vida acadêmica e nunca mais perca o controle do seu limite de faltas.
+Faltura é uma plataforma web moderna, gamificada e colaborativa para o gerenciamento de faltas, organização acadêmica e integração entre estudantes. Com foco em usabilidade, produtividade e motivação, o sistema oferece alertas automáticos, gamificação, estatísticas e ferramentas colaborativas, tudo isso com suporte ao uso offline via PWA.
 
 ## ✨ Features Principais
 
 *   **🔐 Autenticação & Dados**
-    *   Autenticação de Usuários: Sistema seguro de registro e login, com persistência de sessão utilizando o armazenamento local do navegador (localStorage).
-    *   Login Seguro: Registro e autenticação com persistência de sessão via localStorage.
-    *   Persistência Híbrida: Todos os dados são armazenados localmente no navegador e sincronizados com o Supabase, permitindo uso offline e online.
+    *   Autenticação via Supabase com verificação obrigatória por e-mail
+    *   Sistema completo de permissões com papéis distintos (admin, moderador, usuário)
+    *   Banimento de usuários e logs de auditoria
+    *   Rate limiting para prevenir abusos (login, registro, spam)
+    *   Segurança com PostgreSQL RLS (Row Level Security)
+    *   Auditoria em tempo real das ações administrativas
 
-*   **📚 Organização Acadêmica**
-    *   Gerenciamento de Matérias: Adicione, edite e remova matérias, configurando carga horária semanal e limite de faltas individual.
-    *   Grade Horária Interativa: Monte sua grade semanal de aulas visualmente, alocando matérias por dia e horário.
-    *   Controle Automatizado de Faltas: Registre faltas por data e o sistema calcula automaticamente quais matérias foram impactadas.
-    *   Alertas de Risco: Notificações visuais ao atingir 75%, 90% ou 100% das faltas permitidas.
+*   **📚 Gestão Acadêmica**
+    *   Matérias com carga horária e cor personalizável
+    *   Grade horária visual interativa
+    *   Registro automatizado de faltas por data e hora
+    *   Alertas em 75%, 90% e 100% do limite
+    *   Histórico completo de semestres
+    *   Importação/exportação de dados com segurança
+ 
+*   **👥 Turmas & Comunidade**
+    *   Criação e gerenciamento de turmas
+    *   Convite de membros por email
+    *   Líderes com permissões especiais
+    *   Notificações automáticas de faltas entre os membros
+    *   Compartilhamento de evidências (texto/imagem)
+    *   Limite configurável de turmas por usuário
 
-*   **📊 Dashboard & Visualização**
-    *   Painel Inteligente: Visão geral do seu desempenho, matérias em risco e progresso geral.
-    *   Gestão de Tarefas: Crie e gerencie tarefas com checklist, prioridade e status de conclusão.
+*   **🏆 Gamificação**
+    *   Sistema de níveis com XP (50+ ações que geram experiência)
+    *   Tiers de usuários: Calouro, Veterano, Expert, Lenda
+    *   Achievements divididos em: Integração, Consistência e Segredo
+    *   4 raridades: Common, Rare, Epic, Legendary
+    *   Leaderboard global com ranking ao vivo
 
-*   **🎮 Gamificação & Comunidade**
-    *   Sistema de XP e Níveis: Ganhe experiência ao interagir com a plataforma e suba de nível.
-    *   Conquistas (Achievements): Desbloqueie badges com diferentes raridades.
-    *   Leaderboard Global: Ranking com sistema de tiers para promover engajamento.
-    *   Classes/Turmas: Participe de turmas colaborativas com visão compartilhada.
+*   **📝 Sistema de Tarefas e Notas**
+    *   Criação de tarefas com checklist
+    *   Priorização e categorização
+    *   Integração com o sistema de XP
+    *   Notificações e lembretes para pendências
 
-*   **🛠️ Administração & Segurança**
-    *   Painel Administrativo Completo: Controle de usuários, matérias, turmas e atividades da plataforma.
-    *   Rate Limiting: Bloqueio automático de ações abusivas ou spam.
-    *   Sistema de Banimento: Ferramentas de moderação de usuários.
-    *   Logs de Auditoria: Histórico completo de ações administrativas para transparência.
+*   **📊 Estatísticas & Relatórios**
+    *   Gráficos dinâmicos de frequência e desempenho
+    *   Tendências semanais/mensais
+    *   Relatórios de uso por usuário e turma
+    *   Análise de comportamento e engajamento
 
-*   **📱 Interface & Personalização**
-    *   Design Responsivo: Interface moderna, adaptada para desktops, tablets e smartphones (mobile-first).
-    *   Temas Customizáveis: Escolha ou crie temas visuais para personalizar sua experiência.
+*   **🛠️ Painel Administrativo**
+    *   Analytics em tempo real
+    *   Gerenciamento completo de usuários, turmas e conteúdos
+    *   Logs detalhados de ações (auditoria)
+    *   Permissões granularizadas
+    *   Ajustes de sistema direto no painel
+    *   Monitoramento de crescimento e retenção
 
-## 🛠️ Tecnologias Utilizadas
+*   **🎨 Interface e UX**
+    *   Design mobile-first otimizado para qualquer tela
+    *   Temas claro e escuro personalizáveis
+    *   Animações fluidas e responsivas
+    *   Suporte a gestos mobile
+    *   Aplicativo PWA com funcionalidade offline
+
+## 🧠 Tecnologias Utilizadas
 
 *   **Frontend:** 
     *   React (para a construção da interface do usuário)
@@ -54,7 +81,14 @@ Faltula é uma plataforma web moderna, intuitiva e responsiva desenvolvida para 
     *   Lucide React (para ícones vetoriais)
     *   Sonner (para notificações toast amigáveis)
     *   date-fns (para manipulação de datas)
-    *   Supabase (PostgreSQL, Auth, Real-time)
+
+*   **Backend** 
+    *   Supabase (Auth, PostgreSQL, RLS, Realtime, Storage, Edge Functions)
+    *   PostgreSQL com segurança por linha (Row Level Security)
+    *   Edge Functions para lógica customizada
+    *   Realtime Subscriptions para sincronização ao vivo
+    *   Rate Limiting embutido
+
 *   **Build Tool:** 
     *   Vite (servidor de desenvolvimento rápido e otimizador de build)
 *   **Outras Ferramentas:** 
