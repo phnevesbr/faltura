@@ -18,6 +18,18 @@ Faltula é uma plataforma web moderna, intuitiva e responsiva desenvolvida para 
 *   **Dashboard Inteligente:** Tenha uma visão geral rápida do número de matérias, matérias em risco e informações do seu curso.
 *   **Persistência de Dados Local:** Todos os seus dados (usuário, matérias, grade e histórico de faltas) são salvos de forma segura diretamente no seu navegador, garantindo acesso rápido e offline.
 *   **Interface Responsiva:** Design moderno e totalmente adaptado para proporcionar uma excelente experiência em desktops, tablets e smartphones.
+*   **Gamificação:** Níveis, XP, badges, rankings
+*   **Conquistas:** Achievements com diferentes raridades
+*   **Classes/Turmas:** Gestão colaborativa de turmas
+*   **Ranking:** Leaderboard global com tiers
+*   **Administração:** Painel admin completo
+*   **Notificações:** Notificações em tempo real
+*   **Rate Limiting:** Proteção contra spam
+*   **Banimento:** Moderação de usuários
+*   **Logs:** Auditoria completa
+*   **Gestão de Tarefas:** Com checklist e prioridades
+*   **Interface Responsiva:** Mobile-first design
+*   **Temas:** Sistema de temas customizáveis
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -32,6 +44,7 @@ Faltula é uma plataforma web moderna, intuitiva e responsiva desenvolvida para 
     *   Lucide React (para ícones vetoriais)
     *   Sonner (para notificações toast amigáveis)
     *   date-fns (para manipulação de datas)
+    *   Supabase (PostgreSQL, Auth, Real-time)
 *   **Build Tool:** 
     *   Vite (servidor de desenvolvimento rápido e otimizador de build)
 *   **Outras Ferramentas:** 
