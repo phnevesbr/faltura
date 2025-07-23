@@ -10,26 +10,36 @@ Faltula é uma plataforma web moderna, intuitiva e responsiva desenvolvida para 
 
 ## ✨ Features Principais
 
+** 🔐 Autenticação & Dados
 *   **Autenticação de Usuários:** Sistema seguro de registro e login, com persistência de sessão utilizando o armazenamento local do navegador (localStorage).
-*   **Gerenciamento de Matérias:** Adicione, edite e remova suas matérias, especificando a carga horária semanal e definindo limites personalizados de faltas para cada uma.
-*   **Grade Horária Semanal:** Monte sua grade de aulas de forma visual e intuitiva, alocando matérias em dias e horários específicos.
-*   **Controle de Faltas Automatizado:** Registre suas faltas por data, e o sistema automaticamente calculará e atribuirá essas faltas às matérias que você teria naquele dia.
-*   **Alertas de Risco:** Receba notificações claras e visuais quando suas faltas se aproximarem (75%, 90%) ou atingirem (100%) o limite permitido, ajudando a evitar reprovações por frequência.
-*   **Dashboard Inteligente:** Tenha uma visão geral rápida do número de matérias, matérias em risco e informações do seu curso.
-*   **Persistência de Dados Local:** Todos os seus dados (usuário, matérias, grade e histórico de faltas) são salvos de forma segura diretamente no seu navegador, garantindo acesso rápido e offline ou online pelo supabase.
-*   **Interface Responsiva:** Design moderno e totalmente adaptado para proporcionar uma excelente experiência em desktops, tablets e smartphones.
-*   **Gamificação:** Níveis, XP, badges, rankings
-*   **Conquistas:** Achievements com diferentes raridades
-*   **Classes/Turmas:** Gestão colaborativa de turmas
-*   **Ranking:** Leaderboard global com tiers
-*   **Administração:** Painel admin completo
-*   **Notificações:** Notificações em tempo real
-*   **Rate Limiting:** Proteção contra spam
-*   **Banimento:** Moderação de usuários
-*   **Logs:** Auditoria completa
-*   **Gestão de Tarefas:** Com checklist e prioridades
-*   **Interface Responsiva:** Mobile-first design
-*   **Temas:** Sistema de temas customizáveis
+*   **Login Seguro:** Registro e autenticação com persistência de sessão via localStorage.
+*   **Persistência Híbrida:** Todos os dados são armazenados localmente no navegador e sincronizados com o Supabase, permitindo uso offline e online.
+
+** 📚 Organização Acadêmica
+*   **Gerenciamento de Matérias:** Adicione, edite e remova matérias, configurando carga horária semanal e limite de faltas individual.
+*   **Grade Horária Interativa:** Monte sua grade semanal de aulas visualmente, alocando matérias por dia e horário.
+*   **Controle Automatizado de Faltas:** Registre faltas por data e o sistema calcula automaticamente quais matérias foram impactadas.
+*   **Alertas de Risco:** Notificações visuais ao atingir 75%, 90% ou 100% das faltas permitidas.
+
+** 📊 Dashboard & Visualização
+*   **Painel Inteligente:** Visão geral do seu desempenho, matérias em risco e progresso geral.
+*   **Gestão de Tarefas:** Crie e gerencie tarefas com checklist, prioridade e status de conclusão.
+
+** 🎮 Gamificação & Comunidade
+*   **Sistema de XP e Níveis:** Ganhe experiência ao interagir com a plataforma e suba de nível.
+*   **Conquistas (Achievements):** Desbloqueie badges com diferentes raridades.
+*   **Leaderboard Global:** Ranking com sistema de tiers para promover engajamento.
+*   **Classes/Turmas:** Participe de turmas colaborativas com visão compartilhada.
+
+** 🛠️ Administração & Segurança
+*   **Painel Administrativo Completo:** Controle de usuários, matérias, turmas e atividades da plataforma.
+*   **Rate Limiting:** Bloqueio automático de ações abusivas ou spam.
+*   **Sistema de Banimento:** Ferramentas de moderação de usuários.
+*   **Logs de Auditoria:** Histórico completo de ações administrativas para transparência.
+
+** 📱 Interface & Personalização
+*   **Design Responsivo:** Interface moderna, adaptada para desktops, tablets e smartphones (mobile-first).
+*   **Temas Customizáveis:** Escolha ou crie temas visuais para personalizar sua experiência.
 
 ## 🛠️ Tecnologias Utilizadas
 
