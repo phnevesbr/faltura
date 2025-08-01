@@ -1,0 +1,821 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide scrollbars */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Auth gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262.1 83.3% 57.8%), hsl(270 89% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(210 40% 96.1%), hsl(220 14% 92%));
+    --gradient-glass: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.25), 
+      rgba(255, 255, 255, 0.1)
+    );
+    
+    /* Auth shadows */
+    --shadow-auth: 0 20px 50px -12px rgba(0, 0, 0, 0.08);
+    --shadow-glow: 0 0 50px rgba(140, 69, 255, 0.15);
+    --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    
+    /* Gamification colors */
+    --tier-calouro: 120 14% 50%;
+    --tier-veterano: 199 89% 48%;
+    --tier-expert: 262.1 83.3% 57.8%;
+    --tier-lenda: 45 93% 47%;
+    --xp-text: 262.1 83.3% 57.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 217.2 32.6% 12.5%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 262.1 83.3% 57.8%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 94.1%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Dark mode auth gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262.1 83.3% 57.8%), hsl(270 89% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(217.2 32.6% 17.5%), hsl(220 14% 20%));
+    --gradient-glass: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.1), 
+      rgba(255, 255, 255, 0.05)
+    );
+    
+    /* Dark mode auth shadows */
+    --shadow-auth: 0 20px 50px -12px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 50px rgba(140, 69, 255, 0.25);
+    --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    
+    /* Dark mode gamification colors */
+    --tier-calouro: 120 14% 60%;
+    --tier-veterano: 199 89% 55%;
+    --tier-expert: 262.1 83.3% 67.8%;
+    --tier-lenda: 45 93% 57%;
+    --xp-text: 262.1 83.3% 67.8%;
+  }
+
+  /* Tema Oceano */
+  .ocean {
+    --background: 210 40% 98%;
+    --foreground: 210 40% 12%;
+    --card: 210 40% 98%;
+    --card-foreground: 210 40% 12%;
+    --popover: 210 40% 98%;
+    --popover-foreground: 210 40% 12%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 94%;
+    --secondary-foreground: 210 40% 15%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 210 40% 40%;
+    --accent: 198 93% 60%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 210 40% 85%;
+    --input: 210 40% 85%;
+    --ring: 199 89% 48%;
+    
+    /* Ocean theme gamification colors */
+    --tier-calouro: 210 40% 50%;
+    --tier-veterano: 199 89% 48%;
+    --tier-expert: 198 93% 60%;
+    --tier-lenda: 190 100% 45%;
+    --xp-text: 199 89% 48%;
+  }
+
+  .dark.ocean {
+    --background: 210 40% 8%;
+    --foreground: 210 40% 98%;
+    --card: 210 40% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 210 40% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 199 89% 55%;
+    --primary-foreground: 210 40% 8%;
+    --secondary: 210 40% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 210 40% 15%;
+    --muted-foreground: 210 40% 65%;
+    --accent: 198 93% 60%;
+    --accent-foreground: 210 40% 8%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 210 40% 18%;
+    --input: 210 40% 18%;
+    --ring: 199 89% 55%;
+    
+    /* Dark ocean theme gamification colors */
+    --tier-calouro: 210 40% 60%;
+    --tier-veterano: 199 89% 55%;
+    --tier-expert: 198 93% 65%;
+    --tier-lenda: 190 100% 55%;
+    --xp-text: 199 89% 55%;
+  }
+
+  /* Tema Floresta */
+  .forest {
+    --background: 120 25% 98%;
+    --foreground: 120 25% 12%;
+    --card: 120 25% 98%;
+    --card-foreground: 120 25% 12%;
+    --popover: 120 25% 98%;
+    --popover-foreground: 120 25% 12%;
+    --primary: 142 71% 45%;
+    --primary-foreground: 120 25% 98%;
+    --secondary: 120 25% 94%;
+    --secondary-foreground: 120 25% 15%;
+    --muted: 120 25% 94%;
+    --muted-foreground: 120 25% 40%;
+    --accent: 142 71% 55%;
+    --accent-foreground: 120 25% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 120 25% 98%;
+    --border: 120 25% 85%;
+    --input: 120 25% 85%;
+    --ring: 142 71% 45%;
+    
+    /* Forest theme gamification colors */
+    --tier-calouro: 120 25% 50%;
+    --tier-veterano: 142 71% 45%;
+    --tier-expert: 155 100% 40%;
+    --tier-lenda: 120 100% 35%;
+    --xp-text: 142 71% 45%;
+  }
+
+  .dark.forest {
+    --background: 120 25% 8%;
+    --foreground: 120 25% 98%;
+    --card: 120 25% 10%;
+    --card-foreground: 120 25% 98%;
+    --popover: 120 25% 10%;
+    --popover-foreground: 120 25% 98%;
+    --primary: 142 71% 55%;
+    --primary-foreground: 120 25% 8%;
+    --secondary: 120 25% 15%;
+    --secondary-foreground: 120 25% 98%;
+    --muted: 120 25% 15%;
+    --muted-foreground: 120 25% 65%;
+    --accent: 142 71% 65%;
+    --accent-foreground: 120 25% 8%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 120 25% 98%;
+    --border: 120 25% 18%;
+    --input: 120 25% 18%;
+    --ring: 142 71% 55%;
+    
+    /* Dark forest theme gamification colors */
+    --tier-calouro: 120 25% 60%;
+    --tier-veterano: 142 71% 55%;
+    --tier-expert: 155 100% 50%;
+    --tier-lenda: 120 100% 45%;
+    --xp-text: 142 71% 55%;
+  }
+
+  /* Tema Sunset */
+  .sunset {
+    --background: 25 100% 98%;
+    --foreground: 25 100% 12%;
+    --card: 25 100% 98%;
+    --card-foreground: 25 100% 12%;
+    --popover: 25 100% 98%;
+    --popover-foreground: 25 100% 12%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 25 100% 98%;
+    --secondary: 25 100% 94%;
+    --secondary-foreground: 25 100% 15%;
+    --muted: 25 100% 94%;
+    --muted-foreground: 25 100% 40%;
+    --accent: 14 91% 60%;
+    --accent-foreground: 25 100% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 25 100% 98%;
+    --border: 25 100% 85%;
+    --input: 25 100% 85%;
+    --ring: 25 95% 53%;
+    
+    /* Sunset theme gamification colors */
+    --tier-calouro: 25 100% 50%;
+    --tier-veterano: 25 95% 53%;
+    --tier-expert: 14 91% 60%;
+    --tier-lenda: 45 100% 50%;
+    --xp-text: 25 95% 53%;
+  }
+
+  .dark.sunset {
+    --background: 25 100% 8%;
+    --foreground: 25 100% 98%;
+    --card: 25 100% 10%;
+    --card-foreground: 25 100% 98%;
+    --popover: 25 100% 10%;
+    --popover-foreground: 25 100% 98%;
+    --primary: 25 95% 60%;
+    --primary-foreground: 25 100% 8%;
+    --secondary: 25 100% 15%;
+    --secondary-foreground: 25 100% 98%;
+    --muted: 25 100% 15%;
+    --muted-foreground: 25 100% 65%;
+    --accent: 14 91% 70%;
+    --accent-foreground: 25 100% 8%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 25 100% 98%;
+    --border: 25 100% 18%;
+    --input: 25 100% 18%;
+    --ring: 25 95% 60%;
+    
+    /* Dark sunset theme gamification colors */
+    --tier-calouro: 25 100% 60%;
+    --tier-veterano: 25 95% 60%;
+    --tier-expert: 14 91% 70%;
+    --tier-lenda: 45 100% 60%;
+    --xp-text: 25 95% 60%;
+  }
+
+  /* Tema Cristal */
+  .crystal {
+    --background: 280 20% 98%;
+    --foreground: 280 20% 12%;
+    --card: 280 20% 98%;
+    --card-foreground: 280 20% 12%;
+    --popover: 280 20% 98%;
+    --popover-foreground: 280 20% 12%;
+    --primary: 285 85% 65%;
+    --primary-foreground: 280 20% 98%;
+    --secondary: 280 20% 94%;
+    --secondary-foreground: 280 20% 15%;
+    --muted: 280 20% 94%;
+    --muted-foreground: 280 20% 40%;
+    --accent: 285 85% 75%;
+    --accent-foreground: 280 20% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 280 20% 98%;
+    --border: 280 20% 85%;
+    --input: 280 20% 85%;
+    --ring: 285 85% 65%;
+    
+    /* Crystal theme gamification colors */
+    --tier-calouro: 280 20% 50%;
+    --tier-veterano: 285 85% 65%;
+    --tier-expert: 285 85% 75%;
+    --tier-lenda: 300 100% 70%;
+    --xp-text: 285 85% 65%;
+  }
+
+  .dark.crystal {
+    --background: 280 20% 8%;
+    --foreground: 280 20% 98%;
+    --card: 280 20% 10%;
+    --card-foreground: 280 20% 98%;
+    --popover: 280 20% 10%;
+    --popover-foreground: 280 20% 98%;
+    --primary: 285 85% 70%;
+    --primary-foreground: 280 20% 8%;
+    --secondary: 280 20% 15%;
+    --secondary-foreground: 280 20% 98%;
+    --muted: 280 20% 15%;
+    --muted-foreground: 280 20% 65%;
+    --accent: 285 85% 80%;
+    --accent-foreground: 280 20% 8%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 280 20% 98%;
+    --border: 280 20% 18%;
+    --input: 280 20% 18%;
+    --ring: 285 85% 70%;
+    
+    /* Dark crystal theme gamification colors */
+    --tier-calouro: 280 20% 60%;
+    --tier-veterano: 285 85% 70%;
+    --tier-expert: 285 85% 80%;
+    --tier-lenda: 300 100% 80%;
+    --xp-text: 285 85% 70%;
+  }
+
+  /* Tema Neon */
+  .neon {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+    --primary: 322 100% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 322 100% 54%;
+    
+    /* Neon theme gamification colors */
+    --tier-calouro: 0 0% 45%;
+    --tier-veterano: 322 100% 54%;
+    --tier-expert: 180 100% 50%;
+    --tier-lenda: 60 100% 50%;
+    --xp-text: 322 100% 54%;
+  }
+
+  .dark.neon {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 322 100% 60%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 180 100% 60%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 322 100% 60%;
+    
+    /* Dark neon theme gamification colors */
+    --tier-calouro: 0 0% 70%;
+    --tier-veterano: 322 100% 60%;
+    --tier-expert: 180 100% 60%;
+    --tier-lenda: 60 100% 60%;
+    --xp-text: 322 100% 60%;
+  }
+
+  /* Tema Vulcão */
+  .volcano {
+    --background: 15 100% 98%;
+    --foreground: 15 100% 12%;
+    --card: 15 100% 98%;
+    --card-foreground: 15 100% 12%;
+    --popover: 15 100% 98%;
+    --popover-foreground: 15 100% 12%;
+    --primary: 0 100% 50%;
+    --primary-foreground: 15 100% 98%;
+    --secondary: 15 100% 94%;
+    --secondary-foreground: 15 100% 15%;
+    --muted: 15 100% 94%;
+    --muted-foreground: 15 100% 40%;
+    --accent: 25 100% 55%;
+    --accent-foreground: 15 100% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 15 100% 98%;
+    --border: 15 100% 85%;
+    --input: 15 100% 85%;
+    --ring: 0 100% 50%;
+    
+    /* Volcano theme gamification colors */
+    --tier-calouro: 15 100% 50%;
+    --tier-veterano: 0 100% 50%;
+    --tier-expert: 25 100% 55%;
+    --tier-lenda: 45 100% 50%;
+    --xp-text: 0 100% 50%;
+  }
+
+  .dark.volcano {
+    --background: 15 100% 8%;
+    --foreground: 15 100% 98%;
+    --card: 15 100% 10%;
+    --card-foreground: 15 100% 98%;
+    --popover: 15 100% 10%;
+    --popover-foreground: 15 100% 98%;
+    --primary: 0 100% 60%;
+    --primary-foreground: 15 100% 8%;
+    --secondary: 15 100% 15%;
+    --secondary-foreground: 15 100% 98%;
+    --muted: 15 100% 15%;
+    --muted-foreground: 15 100% 65%;
+    --accent: 25 100% 65%;
+    --accent-foreground: 15 100% 8%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 15 100% 98%;
+    --border: 15 100% 18%;
+    --input: 15 100% 18%;
+    --ring: 0 100% 60%;
+    
+    /* Dark volcano theme gamification colors */
+    --tier-calouro: 15 100% 60%;
+    --tier-veterano: 0 100% 60%;
+    --tier-expert: 25 100% 65%;
+    --tier-lenda: 45 100% 60%;
+    --xp-text: 0 100% 60%;
+  }
+
+  /* Tema Lendário */
+  .legendary {
+    --background: 45 100% 98%;
+    --foreground: 45 100% 12%;
+    --card: 45 100% 98%;
+    --card-foreground: 45 100% 12%;
+    --popover: 45 100% 98%;
+    --popover-foreground: 45 100% 12%;
+    --primary: 45 93% 47%;
+    --primary-foreground: 45 100% 98%;
+    --secondary: 45 100% 94%;
+    --secondary-foreground: 45 100% 15%;
+    --muted: 45 100% 94%;
+    --muted-foreground: 45 100% 40%;
+    --accent: 50 100% 55%;
+    --accent-foreground: 45 100% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 45 100% 98%;
+    --border: 45 100% 85%;
+    --input: 45 100% 85%;
+    --ring: 45 93% 47%;
+    
+    /* Legendary theme gamification colors */
+    --tier-calouro: 45 100% 50%;
+    --tier-veterano: 45 93% 47%;
+    --tier-expert: 50 100% 55%;
+    --tier-lenda: 45 93% 47%;
+    --xp-text: 45 93% 47%;
+  }
+
+  .dark.legendary {
+    --background: 45 100% 8%;
+    --foreground: 45 100% 98%;
+    --card: 45 100% 10%;
+    --card-foreground: 45 100% 98%;
+    --popover: 45 100% 10%;
+    --popover-foreground: 45 100% 98%;
+    --primary: 45 93% 55%;
+    --primary-foreground: 45 100% 8%;
+    --secondary: 45 100% 15%;
+    --secondary-foreground: 45 100% 98%;
+    --muted: 45 100% 15%;
+    --muted-foreground: 45 100% 65%;
+    --accent: 50 100% 65%;
+    --accent-foreground: 45 100% 8%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 45 100% 98%;
+    --border: 45 100% 18%;
+    --input: 45 100% 18%;
+    --ring: 45 93% 55%;
+    
+    /* Dark legendary theme gamification colors */
+    --tier-calouro: 45 100% 60%;
+    --tier-veterano: 45 93% 55%;
+    --tier-expert: 50 100% 65%;
+    --tier-lenda: 45 93% 55%;
+    --xp-text: 45 93% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Prevent zoom on mobile devices */
+  @media (max-width: 768px) {
+    html {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      touch-action: manipulation;
+    }
+    
+    input, select, textarea {
+      font-size: 16px !important; /* Prevents zoom on iOS */
+      -webkit-appearance: none;
+      -webkit-border-radius: 0;
+    }
+    
+    /* Disable double tap zoom */
+    * {
+      touch-action: manipulation;
+    }
+  }
+
+  /* Mobile-first design optimizations */
+  @media (max-width: 640px) {
+    body {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    
+    /* Improve touch targets on mobile */
+    button, input, select, textarea {
+      min-height: 44px;
+    }
+    
+    /* Better scrolling on mobile */
+    * {
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Better spacing for mobile cards */
+    .card {
+      border-radius: 12px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Optimize buttons for touch */
+    .mobile-touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+
+  /* Tablet optimizations */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    body {
+      font-size: 15px;
+    }
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-10px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes bounce-check {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse-long {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(140, 69, 255, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(140, 69, 255, 0.6); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-slide-in-bottom {
+  animation: slideInFromBottom 0.4s ease-out;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.animate-bounce-check {
+  animation: bounce-check 0.4s ease-out;
+}
+
+.animate-pulse-long {
+  animation: pulse-long 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Modern auth styles */
+.auth-glass {
+  background: var(--gradient-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.auth-gradient {
+  background: var(--gradient-primary);
+}
+
+.auth-shadow {
+  box-shadow: var(--shadow-auth);
+}
+
+.auth-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  .mobile-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Better button spacing for touch */
+  .mobile-button-group > * {
+    min-height: 48px;
+    margin-bottom: 8px;
+  }
+  
+  /* Improved card spacing */
+  .mobile-card {
+    margin-bottom: 12px;
+    border-radius: 12px;
+    padding: 16px;
+  }
+  
+  /* Better form inputs */
+  .mobile-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+    border-radius: 8px;
+    padding: 12px;
+    border: 2px solid hsl(var(--border));
+  }
+  
+  /* Improved select dropdowns for mobile */
+  .mobile-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 8px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 32px;
+  }
+}
+
+/* PWA-ready styles */
+@media (display-mode: standalone) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Loading states */
+.skeleton {
+  background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--muted-foreground) / 0.1) 50%, hsl(var(--muted)) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Better focus states for accessibility */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+* {
+  transition: colors 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Mobile-specific component improvements */
+@media (max-width: 640px) {
+  /* Better mobile badges */
+  .badge {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+  
+  /* Improved mobile cards */
+  .card {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+    border: 1px solid hsl(var(--border));
+  }
+  
+  /* Better mobile buttons */
+  .button {
+    border-radius: 8px;
+    font-weight: 500;
+  }
+}
+
+/* Improved mobile navigation */
+.mobile-nav-tabs {
+  position: sticky;
+  top: 56px; /* Adjust based on header height */
+  z-index: 40;
+  background: hsl(var(--background));
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+/* Better mobile form layouts */
+@media (max-width: 640px) {
+  .form-mobile {
+    gap: 16px;
+  }
+  
+  .form-mobile .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .form-mobile label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+}
